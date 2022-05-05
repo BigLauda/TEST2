@@ -54,7 +54,7 @@ async def incoming_message_f(client, message):
     user_command = message.command[0]
     g_id = message.from_user.id
     credit = await message.reply_text(
-        f"🧲𝙇𝙚𝙚𝙘𝙝𝙞𝙣𝙜 𝙛𝙤𝙧 𝙮𝙤𝙪<a href='tg://user?id={g_id}'>⚡</a>", parse_mode="html"
+        f"𝙇𝙚𝙚𝙘𝙝𝙞𝙣𝙜 𝙛𝙤𝙧 𝙮𝙤𝙪<a href='tg://user?id={g_id}'></a>", parse_mode="html"
     )
     i_m_sefg = await message.reply_text("processing...", quote=True)
     # get link from the incoming message
@@ -67,10 +67,10 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
         cf_name = None
     else:
-        await i_m_sefg.edit("👺𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙👺")
+        await i_m_sefg.edit("𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("⚡𝙚𝙭𝙩𝙧𝙖𝙘𝙩𝙞𝙣𝙜 𝙡𝙞𝙣𝙠𝙨🧲")
+        await i_m_sefg.edit_text("𝙚𝙭𝙩𝙧𝙖𝙘𝙩𝙞𝙣𝙜 𝙡𝙞𝙣𝙠𝙨")
         # start the aria2c daemon
         aria_i_p = await aria_start()
         # LOGGER.info(aria_i_p)
@@ -82,7 +82,7 @@ async def incoming_message_f(client, message):
         # create download directory, if not exist
         if not os.path.isdir(new_download_location):
             os.makedirs(new_download_location)
-        await i_m_sefg.edit_text("⏬𝙏𝙍𝙔𝙄𝙉𝙂 𝙏𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿🧲")
+        await i_m_sefg.edit_text("𝙏𝙍𝙔𝙄𝙉𝙂 𝙏𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿")
         # try to download the "link"
         is_zip = False
         is_cloud = False
@@ -127,10 +127,10 @@ async def incoming_youtube_dl_f(client, message):
     """ /ytdl command """
     current_user_id = message.from_user.id
     credit = await message.reply_text(
-        f"<a href='tg://user?id={current_user_id}'>▶ 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙏𝙝𝙚 𝙔𝙤𝙪𝙩𝙪𝙗𝙚 𝙁𝙞𝙡𝙚 𝙛𝙤𝙧 𝙮𝙤𝙪 ⚡</a>",
+        f"<a href='tg://user?id={current_user_id}'> 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙏𝙝𝙚 𝙔𝙤𝙪𝙩𝙪𝙗𝙚 𝙁𝙞𝙡𝙚 𝙛𝙤𝙧 𝙮𝙤𝙪 </a>",
         parse_mode="html",
     )
-    i_m_sefg = await message.reply_text("⚡𝙥𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜⚡", quote=True)
+    i_m_sefg = await message.reply_text("𝙥𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜", quote=True)
     # LOGGER.info(message)
     # extract link from message
     if message.reply_to_message:
@@ -147,10 +147,10 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("👺𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙👺")
+        await i_m_sefg.edit("𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙")
         return
     if dl_url is not None:
-        await i_m_sefg.edit_text("⚡𝙚𝙭𝙩𝙧𝙖𝙘𝙩𝙞𝙣𝙜 𝙡𝙞𝙣𝙠𝙨🧲")
+        await i_m_sefg.edit_text("𝙚𝙭𝙩𝙧𝙖𝙘𝙩𝙞𝙣𝙜 𝙡𝙞𝙣𝙠𝙨")
         # create an unique directory
         user_working_dir = os.path.join(DOWNLOAD_LOCATION, str(current_user_id))
         # create download directory, if not exist
@@ -198,7 +198,7 @@ async def g_yt_playlist(client, message):
         if user_command == GPYTDL_COMMAND.lower():
             is_cloud = True
     else:
-        await message.reply_text("👺𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙👺", quote=True)
+        await message.reply_text("𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙", quote=True)
         return
     if "youtube.com/playlist" in url:
         i_m_sefg = await message.reply_text(
@@ -208,7 +208,7 @@ async def g_yt_playlist(client, message):
         await yt_playlist_downg(message, i_m_sefg, client, is_cloud)
 
     else:
-        await message.reply_text("𝙔𝙤𝙪𝙏𝙪𝙗𝙚 𝙥𝙡𝙖𝙮𝙡𝙞𝙨𝙩 𝙡𝙞𝙣𝙠 𝙤𝙣𝙡𝙮🙄", quote=True)
+        await message.reply_text("𝙔𝙤𝙪𝙏𝙪𝙗𝙚 𝙥𝙡𝙖𝙮𝙡𝙞𝙨𝙩 𝙡𝙞𝙣𝙠 𝙤𝙣𝙡𝙮", quote=True)
 
 
 #
@@ -228,14 +228,14 @@ async def g_clonee(client, message):
         await gclone.link_gen_size()
     else:
         await message.reply_text(
-            "🤓𝙔𝙤𝙪 𝙨𝙝𝙤𝙪𝙡𝙙 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙢𝙚𝙨𝙨𝙖𝙜𝙚, 𝙬𝙝𝙞𝙘𝙝 𝙛𝙤𝙧𝙢𝙖𝙩 𝙨𝙝𝙤𝙪𝙡𝙙 𝙗𝙚 [𝙄𝘿 𝙤𝙛 𝙂𝙙𝙧𝙞𝙫𝙚 𝙛𝙞𝙡𝙚/𝙛𝙤𝙡𝙙𝙚𝙧 𝙉𝙖𝙢𝙚 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚/𝙛𝙤𝙡𝙙𝙚𝙧]🤓"
+            "𝙔𝙤𝙪 𝙨𝙝𝙤𝙪𝙡𝙙 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙢𝙚𝙨𝙨𝙖𝙜𝙚, 𝙬𝙝𝙞𝙘𝙝 𝙛𝙤𝙧𝙢𝙖𝙩 𝙨𝙝𝙤𝙪𝙡𝙙 𝙗𝙚 [𝙄𝘿 𝙤𝙛 𝙂𝙙𝙧𝙞𝙫𝙚 𝙛𝙞𝙡𝙚/𝙛𝙤𝙡𝙙𝙚𝙧 𝙉𝙖𝙢𝙚 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚/𝙛𝙤𝙡𝙙𝙚𝙧]"
         )
 
 
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("👺𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙👺", quote=True)
+        await message.reply("𝙉𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙨𝙤𝙪𝙧𝙘𝙚 𝙥𝙧𝙤𝙫𝙞𝙙𝙚𝙙", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
